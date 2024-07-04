@@ -1,14 +1,16 @@
 package com.business.crm.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.List;
-
+@Getter
+@Setter
 @Entity (name = "direccion")
 public class Address {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "provincia")
