@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.List;
 @Getter
 @Setter
@@ -17,7 +17,7 @@ public class Order {
     private Long id;
 
     @Column(name = "fecha")
-    private Date date;
+    private Timestamp date;
 
     @Column (name = "tipo")
     private Integer orderType;
@@ -27,11 +27,10 @@ public class Order {
 
     @JsonIgnore //Avoid json-infinite-recursion
     @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Client client;
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderDetail> orderDetails;
-
 
 }

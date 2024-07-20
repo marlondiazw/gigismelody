@@ -1,6 +1,5 @@
 package com.business.crm.service;
 
-import com.business.crm.model.Client;
 import com.business.crm.model.Order;
 
 import java.util.List;

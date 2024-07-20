@@ -4,13 +4,13 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Getter
 @Setter
 @Entity (name = "cliente")
-public class Client {
+public class Customer {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -35,7 +35,7 @@ public class Client {
     @JoinColumn(name = "direccion_id")
     private Address address;
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "customer")
     private List<Order> orders;
 
 }
